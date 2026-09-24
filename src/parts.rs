@@ -155,7 +155,7 @@ impl DecorationParts {
     pub fn find_surface(&self, surface: &ObjectId) -> Location {
         let found = self
             .parts()
-            .find(|(_id, part)| &part.surface.id() == surface);
+            .find(|(_id, part)| part.surface.id() == surface);
 
         let Some((id, _)) = found else {
             return Location::None;
